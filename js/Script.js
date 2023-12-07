@@ -9,10 +9,11 @@ class Question {
     }
   }
   let questions = [
-    new Question("Quelle méthode Javascript permet de filtrer les éléments d'un tableau", ["indexOf()", "map()", "filter()", "reduce()"], "filter()"),
-    new Question("Quelle méthode Javascript permet de vérifier si un élément figure dans un tableau", ["isNaN()","includes()", "findIndex()", "isOdd()"], "includes()"),
-    new Question("Quelle méthode transforme du JSON en un objet Javascript ?", ["JSON.parse()","JSON.stringify()", "JSON.object()", "JSON.toJS"], "JSON.parse()"),
-    new Question("Quel objet Javascript permet d'arrondir à l'entier le plus proche", ["Math.ceil()","Math.floor()", "Math.round()", "Math.random()"], "Math.round()")
+    new Question("Il existe combien de Assassin's Creed ?", ["29", "20", "18", "25"], "29"),
+    new Question("combien de jeux far cry la séries compte elle ?", ["6","10", "12", "8"], "12"),
+    new Question("combien de Call of Duty sont sortie ?", ["45","25", "32", "39"], "39"),
+    new Question("il existe combien de jeux Watch Dog?", ["4","5", "3", "2"], "3"),
+    new Question("il existe combien de prince of persia?", ["10","12","18", "15"], "15"),
   ];
   
   class Quiz {
@@ -25,9 +26,18 @@ class Question {
       return this.questions[this.currentQuestionIndex];
     }
     guess(answer) {
-      if (this.getCurrentQuestion().isCorrectAnswer(answer)) {
-        this.score++;
-      }
+        if (this.getCurrentQuestion().isCorrectAnswer(answer)) {
+          if (this.currentQuestionIndex<2){
+            this.score=this.score+2;
+          }
+          else if(this.currentQuestionIndex==3){
+            this.score=this.score+3;
+          }
+          else{
+            this.score++;
+          }
+       }
+      
       this.currentQuestionIndex++;
     }
     hasEnded() {
@@ -43,7 +53,7 @@ class Question {
     endQuiz: function() {
       endQuizHTML = `
         <h1>Quiz terminé !</h1>
-        <h3> Votre score est de : ${quiz.score} / ${quiz.questions.length}</h3>`;
+        <h3> Votre score est de : ${quiz.score} / ${"9"}</h3>`;
       this.elementShown("quiz", endQuizHTML);
     },
     question: function() {

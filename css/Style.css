@@ -8,11 +8,12 @@
 }
 
 body {
-  display: grid;
+  
   align-items: center;
   justify-items: center;
-  min-height: 100vh;
-  background: #2f3542;
+  min-height: 90vh;
+  
+  background: #007506;
   color: #dfe4ea;
 }
 body h1 {
@@ -21,10 +22,10 @@ body h1 {
   font-size: 3rem;
 }
 body h1 span, body h1 i {
-  color: #ffa502;
+  color: #0206ff;
 }
 body h3 {
-  color: #ffa502;
+  color: #0202ff;
   font-size: 1.5rem;
 }
 body .container .choices {
@@ -47,7 +48,7 @@ body .container .choices button {
   font-weight: 600;
 }
 body .container .choices button:hover {
-  background: #ffa502;
+  background: #0217ff;
   transition: 0.5s;
 }
 body .container .choices button:active {
@@ -59,7 +60,64 @@ body .container .choices button p {
 }
 body #progress {
   font-size: 1.3rem;
-  color: #ffa502;
+  color: #021bff;
+}
+
+/*mon css*/
+footer{
+display: flex;
+}
+a{
+  color: rgb(0, 13, 255);
+}
+img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.droite{
+min-width:33%;
+display:flex;
+justify-content: flex-end;
+}
+.centre{
+  min-width: 33%;
+}
+.gauche{
+  min-width: 33%;
+}
+
+.container{
+  margin-top: 3vh;
+  display:flex;
+  justify-content: space-around;
+}
+#moi{
+  width: 50px;
+  height: 50px;
+}
+#rejouer{
+  flex: 1 0 45%;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  margin: 0.4rem;
+  outline: none;
+  background: #dfe4ea;
+  user-select: none;
+  font-weight: 600;
+}
+.rejouer{
+  margin-top: 2vh;
+  height: 8vh;
+  margin-bottom: 19vh;
+}
+#rejouer:hover{
+  background: #ff0202;
+  transition: 0.5s;
 }
 
 /*# sourceMappingURL=style.css.map */

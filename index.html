@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+<div class="boite">
   <div class="container">
     <div id="quiz">
       <h1><span>Q</span>uiz <i class="far fa-question-circle"></i></h1>
@@ -40,11 +40,28 @@
         </button>
       </div>
 
-      <p id="progress"></p>
-
+      <p id="progress"></p> 
     </div>
   </div>
-   
+  <!--Lancer un nouvelle Partie-->
+  <div class="rejouer">
+    <input type="button" id="rejouer" value = "Rejouer" onclick="history.go(0)" />
+  </div>
+   <footer>
+        <div class="gauche">
+          <div>Inspiration du projet :</div>
+          <div><a href="https://codepen.io/emilieph/pen/rNyoKVG">https://codepen.io/emilieph/pen/rNyoKVG</a></div>
+        </div> 
+        <div class="centre">
+          <div>Thomas Marceau</div>
+          <div>Design Web A2023</div>
+        </div> 
+        <div class="droite">
+          <a href="mailto:tmarceau01@csbf.qc.ca" id="moi"><img src="assets/image/InShot_20231127_143209790~3.png" alt=""></a>
+        </div>
+      </footer>
+      </div>
+      </div>
   <script src="./script.js" type="text/javascript" ></script>
 </body>
 
