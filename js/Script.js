@@ -25,6 +25,7 @@ class Question {
     getCurrentQuestion() {
       return this.questions[this.currentQuestionIndex];
     }
+    //verifie reponse et pointage
     guess(answer) {
         if (this.getCurrentQuestion().isCorrectAnswer(answer)) {
           if (this.currentQuestionIndex<2){
@@ -50,15 +51,18 @@ class Question {
       let element = document.getElementById(id);
       element.innerHTML = text;
     },
+    //ecran a la fin de la partie
     endQuiz: function() {
       endQuizHTML = `
         <h1>Quiz terminé !</h1>
         <h3> Votre score est de : ${quiz.score} / ${"9"}</h3>`;
       this.elementShown("quiz", endQuizHTML);
     },
+    //affiche les question
     question: function() {
       this.elementShown("question", quiz.getCurrentQuestion().text);
     },
+    //affiche les choix de reponse
     choices: function() {
       let choices = quiz.getCurrentQuestion().choices;
   
@@ -74,6 +78,7 @@ class Question {
         guessHandler("guess" + i, choices[i]);
       }
     },
+    //change de question
     progress: function() {
       let currentQuestionNumber = quiz.currentQuestionIndex + 1;
       this.elementShown("progress", "Question " + currentQuestionNumber + " sur " + quiz.questions.length);
